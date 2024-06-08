@@ -17,8 +17,7 @@ import java.util.Set;
 
 @AllArgsConstructor
 @Service
-public class DetalleUsuarioService  implements UserDetailsService {
-
+public class DetalleUsuarioService implements UserDetailsService {
     private UsuarioService usuarioService;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -42,4 +41,6 @@ public class DetalleUsuarioService  implements UserDetailsService {
                 true, true, true,
                 authorityList);
     }
+
+
 }

@@ -3,8 +3,6 @@ package com.cibertec.DAAII_T1_RodolfoQuispeQuispe.Controllers;
 import com.cibertec.DAAII_T1_RodolfoQuispeQuispe.Models.bd.Usuario;
 import com.cibertec.DAAII_T1_RodolfoQuispeQuispe.Services.UsuarioService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -71,7 +69,7 @@ public class LoginController {
         if (!password.matches(patrones)) {
             model.addAttribute("error", "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un carácter especial.");
             model.addAttribute("modalpasword", true);
-            return "auth/home"; // No se guarda la contraseña y se retorna a la vista con el error
+            return "auth/home";
         }
 
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
